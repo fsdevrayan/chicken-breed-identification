@@ -29,7 +29,7 @@ import { CUSTOM } from './classes/custom'
 import ExampleImages from './ExampleImages'
 import noPhoto from './assets/no-image.jpg'
 
-const base_url = "https://chicken-breed-identifier.netlify.app"
+const base_url = "https://cbidemo.netlify.app"
 // const base_url = "http://localhost:3000"
 
 const defaultText = "Upload a Photo"
