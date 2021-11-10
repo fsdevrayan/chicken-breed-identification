@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
+
+:root {
+  /* Pallete */
+  --black: #000000ff;
+  --oxford-blue: #14213dff;
+  --orange-web: #fca311ff;
+  --platinum: #e5e5e5ff;
+  --white: #ffffffff;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--platinum);
+}
+
+.loader-container,
+.main {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal,
+.modal-content {
+  border-radius: 0;
+}
+
+.examples .col-md-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.examples p {
+  background: radial-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  color: #ccc;
+  position: absolute;
+  font-weight: bold;
+  font-size: 1.05em;
+}
+
+.navbar {
+  background: var(--oxford-blue);
+}
+
+.navbar-title {
+  color: var(--orange-web);
+  font-weight: bold;
+}
+
+.btn-predict {
+  background: var(--orange-web);
+  color: var(--oxford-blue);
+  font-weight: bold;
+}
+
+input[type="file"] {
+  border: 1px solid var(--orange-web);
+  color: var(--oxford-blue);
+  font-weight: bold;
+}
+
+.table {
+  border-color: var(--oxford-blue);
+  border-bottom: 0;
+  border-top: 0;
+}
+
+.table th:nth-child(1) {
+  background: var(--orange-web);
+}
+
+.table th:nth-child(2) {
+  background: var(--oxford-blue);
+  color: var(--orange-web);
+}
+
+.table td {
+  background: var(--white);
+  color: var(--oxford-blue);
+}
