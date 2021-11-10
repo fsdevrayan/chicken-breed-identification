@@ -7,7 +7,9 @@ import 'bootstrap'
 import * as tf from "@tensorflow/tfjs";
 
 import {
-    FiHelpCircle
+    FiHelpCircle,
+    FiCamera,
+    FiUpload,
 } from 'react-icons/fi'
 
 /**
@@ -29,10 +31,11 @@ import { CUSTOM } from './classes/custom'
 import ExampleImages from './ExampleImages'
 import noPhoto from './assets/no-image.jpg'
 
-const base_url = "https://cbidemo.netlify.app"
-// const base_url = "http://localhost:3000"
+// const base_url = "https://cbidemo.netlify.app"
+// const base_url = "http://localhost:3000" 
+const base_url = "http://192.168.1.18:3000"
 
-const defaultText = "Upload a Photo"
+const defaultText = "No image to classify"
 
 /**
  * 
@@ -118,14 +121,14 @@ function App() {
         setTimeout(() => {
             setLoading(false)
             image.current.src = imageUrl
-        }, results.length * 300)
+        }, results.length * 800)
     }, [results, imageUrl])
 
     return loading ? <Loader /> :
         <div className='main'>
             <nav className="navbar navbar-expand-sm border-bottom">
-                <div className="container-fluid">
-                    <ul className="nav d-flex justify-content-around align-items-center">
+                <div className="container-fluid d-flex justify-content-center">
+                    <ul className="nav d-flex justify-content-center align-items-center">
                         <li className="nav-item">
                             <a className="nav-link navbar-title" href="!#">
                                 Chicken Breed Identification
@@ -144,8 +147,21 @@ function App() {
             <main className="d-flex justify-content-center align-items-center flex-column">
                 <img ref={image} src={noPhoto} className="mt-5" height="224px" width="224px" alt="Chicken" />
                 <div className="container mt-5">
-                    <div className="input-group">
-                        <input onChange={uploadImageHandler} accept="image/*" type="file" className="form-control rounded-0" />
+                    <div className="d-flex justify-content-around align-items-center mb-3">
+                        <div>
+                            <label>
+                                <FiUpload size="24" />
+                                <input onChange={uploadImageHandler} accept="image/*" type="file" hidden />
+                            </label>
+                            &nbsp; &nbsp;
+                            &nbsp; &nbsp;
+                            &nbsp; &nbsp;
+                            &nbsp; &nbsp;
+                            <label>
+                                <FiCamera size="24" />
+                                <input onChange={uploadImageHandler} accept="image/*" capture="environment" type="file" hidden />
+                            </label>
+                        </div>
                         <button onClick={async () => {
                             if (text.toLocaleLowerCase() === 'identify') {
                                 let xtensor = tf.browser
@@ -179,7 +195,7 @@ function App() {
                                     });
                                 }
                             }
-                        }} className="btn btn-predict rounded-0">{text}</button>
+                        }} className={`btn btn-lg btn-predict rounded-0 ${text.includes(defaultText) && "bg-transparent shadow-none fw-normal"}`}>{text}</button>
                     </div>
                     <table className="table rounded-0 table-bordered">
                         <thead>
@@ -192,14 +208,14 @@ function App() {
                             {results.length > 0 && results.map((prediction, i) => {
                                 return (
                                     <tr key={i}>
-                                        <td className="p-2">{prediction.breed}</td>
-                                        <td className="p-2">{prediction.accuracy}%{prediction.accuracy && ` accurate`}</td>
+                                        <td className="p-3 text-center" colSpan={`${prediction.breed.includes('Not classified') && 2}`}>{prediction.breed}</td>
+                                        <td className={`p-3 ${prediction.breed.includes('Not classified') && 'd-none'}`}>{prediction.accuracy}{prediction.accuracy && `% accurate`}</td>
                                     </tr>
                                 )
                             })}
                             {results.length <= 0 &&
                                 <tr>
-                                    <td className="p-2 text-center" colSpan="2">No prediction yet...</td>
+                                    <td className="p-3 text-center" colSpan="2">No prediction yet...</td>
                                 </tr>}
                         </tbody>
                     </table>
