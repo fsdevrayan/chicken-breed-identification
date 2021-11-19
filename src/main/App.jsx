@@ -31,9 +31,9 @@ import { CUSTOM } from './classes/custom'
 import ExampleImages from './ExampleImages'
 import noPhoto from './assets/no-image.jpg'
 
-const base_url = "https://cbidemo.netlify.app"
-// const base_url = "http://localhost:3000"
+// const base_url = "https://cbidemo.netlify.app"
 // const base_url = "http://192.168.1.18:3000"
+const base_url = "http://localhost:3000"
 
 const defaultText = "No image to classify"
 
@@ -137,7 +137,7 @@ function App() {
 						</li>
 						<li className="nav-item">
 							<ExampleImages />
-							<a className="nav-link" href="!#" data-bs-target="#help-modal" data-bs-toggle="modal">
+							<a className="nav-link" href="!#" data-bs-target="#helpModal" data-bs-toggle="modal">
 								<FiHelpCircle color="var(--platinum)" size="24" />
 							</a>
 						</li>

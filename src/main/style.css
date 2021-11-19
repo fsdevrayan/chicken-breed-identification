@@ -2,88 +2,88 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
 
 :root {
-  /* Pallete */
-  --black: #000000ff;
-  --oxford-blue: #14213dff;
-  --orange-web: #fca311ff;
-  --platinum: #e5e5e5ff;
-  --white: #ffffffff;
+	/* Pallete */
+	--black: #000000ff;
+	--oxford-blue: #14213dff;
+	--orange-web: #fca311ff;
+	--platinum: #e5e5e5ff;
+	--white: #ffffffff;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
-  background: var(--platinum);
+	font-family: "Montserrat", sans-serif;
+	background: var(--platinum);
 }
 
 .loader-container,
 .main {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
 }
 
 .loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .modal,
 .modal-content {
-  border-radius: 0;
+	border-radius: 0;
 }
 
 .examples .col-md-3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .examples p {
-  background: radial-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-  color: #ccc;
-  position: absolute;
-  font-weight: bold;
-  font-size: 1.05em;
+	background: radial-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+	color: #ccc;
+	position: absolute;
+	font-weight: bold;
+	font-size: 1.05em;
 }
 
 .navbar {
-  background: var(--oxford-blue);
+	background: var(--oxford-blue);
 }
 
 .navbar-title {
-  color: var(--orange-web);
-  font-weight: bold;
+	color: var(--orange-web);
+	font-weight: bold;
 }
 
 .btn-predict {
-  background: var(--orange-web);
-  color: var(--oxford-blue);
-  font-weight: bold;
+	background: var(--orange-web);
+	color: var(--oxford-blue);
+	font-weight: bold;
 }
 
 input[type="file"] {
-  border: 1px solid var(--orange-web);
-  color: var(--oxford-blue);
-  font-weight: bold;
+	border: 1px solid var(--orange-web);
+	color: var(--oxford-blue);
+	font-weight: bold;
 }
 
 .table {
-  border-color: var(--oxford-blue);
-  border-bottom: 0;
-  border-top: 0;
+	border-color: var(--oxford-blue);
+	border-bottom: 0;
+	border-top: 0;
 }
 
 .table th:nth-child(1) {
-  background: var(--orange-web);
+	background: var(--orange-web);
 }
 
 .table th:nth-child(2) {
-  background: var(--oxford-blue);
-  color: var(--orange-web);
+	background: var(--oxford-blue);
+	color: var(--orange-web);
 }
 
 .table td {
-  background: var(--white);
-  color: var(--oxford-blue);
+	background: var(--white);
+	color: var(--oxford-blue);
 }
